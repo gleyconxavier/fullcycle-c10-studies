@@ -2,6 +2,6 @@
 
 ## Git Flow
 
-## GPG and Commits assignature
+## GPG and Commits signature
 
-Git challenge - Do an verified GPG commit into the repo
+Git challenge - Do a verified GPG commit into the repo
