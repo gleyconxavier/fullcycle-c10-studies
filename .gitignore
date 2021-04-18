@@ -1,3 +1,9 @@
 .idea/
+
+# Directories
 **/node_modules/
+**/.scannerwork/
+
+# Files
 **/package-lock.json
+**/coverage.out
