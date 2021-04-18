@@ -1,8 +1,10 @@
-package _go
+package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main(a, b int) (err error) {
+func main() {
 	fmt.Println(sum(2, 2))
 
 	return
@@ -10,4 +12,8 @@ func main(a, b int) (err error) {
 
 func sum(a, b int) int {
 	return a + b
+}
+
+func sub(a, b int) int {
+	return a - b
 }
