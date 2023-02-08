@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./continous-integration
+        working-directory: continous-integration
     strategy:
       matrix:
         go: ['1.15']
