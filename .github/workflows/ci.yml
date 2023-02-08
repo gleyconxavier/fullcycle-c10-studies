@@ -6,6 +6,9 @@ on:
 jobs:
   check-application:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./continous-integration
     strategy:
       matrix:
         go: ['1.15', '1.18.4', '1.20']
@@ -14,8 +17,8 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go }}
-      - run: cd continous-integration && go test
-      - run: cd continous-integration && go run math.go
+      - run: go test
+      - run: go run math.go
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
