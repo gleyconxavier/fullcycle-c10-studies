@@ -16,3 +16,18 @@ jobs:
           go-version: ${{ matrix.go }}
       - run: cd continous-integration && go test
       - run: cd continous-integration && go run math.go
+
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v4.0.0
+      -
+        name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v4
+        with:
+          push: false
+          tags: gleyconxavier/fc3.0-ci-go:latest
