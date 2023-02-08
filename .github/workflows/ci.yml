@@ -11,7 +11,6 @@ jobs:
         working-directory: continous-integration
     strategy:
       matrix:
-        go: ['1.15']
 #        go: ['1.15', '1.18.4', '1.20']
     steps:
       - uses: actions/checkout@v2
@@ -31,5 +30,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v4
         with:
+          file: continous-integration/Dockerfile
           push: false
           tags: gleyconxavier/fc3.0-ci-go:latest
