@@ -6,9 +6,13 @@ on:
 jobs:
   check-application:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: continous-integration
     strategy:
       matrix:
-        go: ['1.18.4', '1.20']
+        go: ['1.15', '1.18.4', '1.20']
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
