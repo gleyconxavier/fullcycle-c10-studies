@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -32,7 +31,7 @@ func Secret(w http.ResponseWriter, r *http.Request) {
 }
 
 func ConfigMap(w http.ResponseWriter, r *http.Request) {
-	data, err := ioutil.ReadFile("/go/myfamily/family.txt")
+	data, err := os.ReadFile("/go/myfamily/family.txt")
 	if err != nil {
 		log.Fatalf("Error reading file: ", err)
 	}
